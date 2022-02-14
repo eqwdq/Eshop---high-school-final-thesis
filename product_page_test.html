@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik:ital,wght@1,300&display=swap" rel="stylesheet">
+
+	<!-- bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="test1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand">Moje Potraviny</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0">
+            <li class="nav-item">
+            <a class="nav-link active" href="#">Domov</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="eshop-products.html">Produkty</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link " href="#">Obchod</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link " href="#">kontakt</a>
+            </li>
+        </ul>
+        <form class="d-flex ">
+            <input class="px-2 search" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn" type="submit">Hladať</button>
+        </form>
+        </div>
+    </div>
+</nav>
+
+<div class="card m-5 " >
+    <div class="row g-0 ">
+        <div class="col-md-6">
+            <img src="http://localhost:8080/KOP/images/luca-zanon-26595-unsplash.jpg" class="img-fluid rounded" alt="...">
+        </div>
+        <div class="col-md-6">
+            <div class="card-body">
+                <h4 class="card-title text-center display-4">Nazov Produktu</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt omnis officiis amet perferendis. Asperiores facere quas quasi at.</p>
+                <div class="position-relative bottom-100">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <button class="btn btn-outline-dark float-end shop-item-button">Do košíka</button>
+                    <i class="bi bi-share-fill my-2 mx-1"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="info-footer col-md-4">
+                <h2>Informácie</h2>
+                <ul class="menu-item">
+                    <li >
+                        <a href="#"> O nás</a>
+                    </li>
+
+                    <li>
+                    <a href="#"> Kontakt
+                    </a>
+                    </li>
+
+                    <li>
+                    <a href="#"> Kontakt
+                    </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact-footer col-md-4">
+                <h2>Kontakt</h2>
+                <ul class="menu-item">
+                    <li>
+                        <a href="tel:0902 100 564"> 0902 100 564 </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.sk/maps/place/Hodin%C3%A1rstvo+Emili/@48.4263709,17.7977718,17z/data=!3m1!4b1!4m5!3m4!1s0x476b5a5597f2200b:0x961be76d1902eb2e!8m2!3d48.4263674!4d17.7999605" target="_blank"> Firma s.r.o
+                    </a>
+                    </li>
+                    <li>
+                        <a href="mailto::danielf0804@gmail.com"> email: danielf0804@gmail.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact-formular col-md-4">
+                <div class="mb-3">
+                    <h2>Pošlite nám správu</h2>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Text Správy</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button type="button" class="btn1">Odoslať</button>
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
