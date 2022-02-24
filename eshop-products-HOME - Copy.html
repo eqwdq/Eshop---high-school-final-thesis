@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produkty</title>
+    <title>Home</title>
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,20 +20,19 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="nav" id="navbarScroll">
-                <li class="nav me-auto my-2 my-lg-0">
-                    <a class="navbar-brand">Moje Potraviny</a>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="eshop-products-HOME.html">Domov</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="eshop-products.html">Produkty</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">kontakt</a>
-                    </li>
+            <ul class="nav me-auto my-2 my-lg-0">
+                <a class="navbar-brand">Vaše Oblečenie</a>
+                <li class="nav-item">
+                    <a class="nav-link active" href="eshop-products-HOME.html">Domov</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="eshop-products.html">Produkty</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">kontakt</a>
+                </li>
 
-                    <li class="nav-item">
+                <li class="nav-item justify-content-end">
                     <!-- sign in -->
                     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSignIn" aria-controls="offcanvasSignIn">Prihlásiť sa</button>
 
@@ -64,105 +63,49 @@
                         </div>
                     <!--end of sign in -->
                     </div>
-                    </li>
-                </ul>
-            </div>
-          </div>
+                </li>
+            </ul>
         </div>
     </nav>
+
+    <!-- start of carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="C:\xampp\htdocs\KOP\images\stock-photo-young-curly-mature-man-wearing-an-elegant-shirt-being-shocked-because-of-something-she-has-seen-1639970746.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="C:\xampp\htdocs\KOP\images\stock-photo-beautiful-blonde-woman-wear-of-white-set-of-track-suit-isolated-on-pastel-background-1926854804.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="C:\xampp\htdocs\KOP\images\stock-photo-full-length-body-size-girl-wearing-white-hoodie-jumping-up-with-backpack-isolated-pastel-pink-color-2015271203.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- end of carousel -->
+
     <section class="shop">
-        <div>
+        <div id="productsDiv" class="row">
+
              <div class="row py-5">
                 <div class="col-lg-8 m-auto text-center">
                     <h1>Produkty</h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-sm-6 col-xl-2 col-md-4 col-lg-3">
-                    <div class="card shadow-sm bg-light mb-2">
-                        <img src="" class="img-fluid shop-item-image" id="productImg" alt="">
-                        <div class="card-body text-center">
-                            <h6 class="shop-item-title" id="shop-item-title"></h6>
-                            <p class="card-text" id="card-text"></p>
-                            <div>
-                                <small class="text-muted float-start">Skladom 5+ ks</small>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <small class="text-muted float-end" id="rating"></small>
-                            </div>
-                        </div>
-                        <div class="card-footer shop-item-details">
-                            <p class="float-start top shop-item-price" id="shop-item-price"></p>
-                            <button class="btn btn-outline-dark float-end shop-item-button">Do košíka</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-xl-2 col-md-4 col-lg-3">
-                    <div class="card shadow-sm bg-light mb-2">
-                        <img src="" class="img-fluid shop-item-image" id="productImg" alt="">
-                        <div class="card-body text-center">
-                            <h6 class="shop-item-title" id="shop-item-title"></h6>
-                            <p class="card-text" id="card-text"></p>
-                            <div>
-                                <small class="text-muted float-start">Skladom 5+ ks</small>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <small class="text-muted float-end" id="rating"></small>
-                            </div>
-                        </div>
-                        <div class="card-footer shop-item-details">
-                            <p class="float-start top shop-item-price" id="shop-item-price"></p>
-                            <button class="btn btn-outline-dark float-end shop-item-button">Do košíka</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-xl-2 col-md-4 col-lg-3">
-                    <div class="card shadow-sm bg-light mb-2">
-                        <img src="" class="img-fluid shop-item-image" id="productImg" alt="">
-                        <div class="card-body text-center">
-                            <h6 class="shop-item-title" id="shop-item-title"></h6>
-                            <p class="card-text" id="card-text"></p>
-                            <div>
-                                <small class="text-muted float-start">Skladom 5+ ks</small>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <small class="text-muted float-end" id="rating"></small>
-                            </div>
-                        </div>
-                        <div class="card-footer shop-item-details">
-                            <p class="float-start top shop-item-price" id="shop-item-price"></p>
-                            <button class="btn btn-outline-dark float-end shop-item-button">Do košíka</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-xl-2 col-md-4 col-lg-3">
-                    <div class="card shadow-sm bg-light mb-2">
-                        <img src="" class="img-fluid shop-item-image" id="productImg" alt="">
-                        <div class="card-body text-center">
-                            <h6 class="shop-item-title" id="shop-item-title"></h6>
-                            <p class="card-text" id="card-text"></p>
-                            <div>
-                                <small class="text-muted float-start">Skladom 5+ ks</small>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <small class="text-muted float-end" id="rating"></small>
-                            </div>
-                        </div>
-                        <div class="card-footer shop-item-details">
-                            <p class="float-start top shop-item-price" id="shop-item-price"></p>
-                            <button class="btn btn-outline-dark float-end shop-item-button">Do košíka</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -282,41 +225,17 @@
     </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-<script>
 
-
-</script> -->
 
 <script type="module">
 
-    function addContentFromFirebase(itemName,price,rating,description) {
-
-        var htmlName = document.getElementById('shop-item-title');
-        var htmlPrice = document.getElementById('shop-item-price');
-        var htmlRating = document.getElementById('rating');
-        var htmlDescription = document.getElementById('card-text');
-
-        htmlName.innerHTML= itemName;
-        htmlPrice.innerHTML= price + ' €';
-        htmlRating.innerHTML= rating;
-        htmlDescription.innerHTML= description;
-
-    }
-    function addFromFirebase(Products) {
-        Products.forEach(element => {
-            addContentFromFirebase(element.name, element.price, element.rating, element.description);
-
-        });
-    }
-
-
     // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
-    import { getFirestore, doc, getDoc, getDocs, onSnapshot, collection } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-analytics.js";
     import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-storage.js";
+    import { getDatabase, ref, get, set, child, update, remove } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js";
+    import { getFirestore, doc, getDoc, setDoc, collection, addDoc, updateDoc  } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js";
 
-    // TODOs: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
 
     // Your web app's Firebase configuration
@@ -332,43 +251,118 @@
         measurementId: "G-XTC30ZEDBX"
     };
 
+
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
+    const realdb = getDatabase();
     const db = getFirestore();
 
+    var outerDiv = document.getElementById('productsDiv');
+    var arrayOfProducts = [];
+    window.addEventListener('load',GetAllProducts);
 
-    function onloadWindow() {
-        getFromFirebase();
-        getImageFromFirestore();
-    }
+    function GetAllProducts() {
+        const dbref= ref(realdb);
 
-    async function getFromFirebase(){
-        const dfRef = collection(db, "metadata");
-
-        onSnapshot(dfRef,(querySnapshot) => {
-            var items = [];
-
-            querySnapshot.forEach(doc => {
-                items.push(doc.data());
+        get(child(dbref, "ProductRealdb"))
+        .then((snapshot) =>  {
+            snapshot.forEach(prod => {
+                arrayOfProducts.push(prod.val());
             });
-            addFromFirebase(items);
+            addAllProducts();
         })
     }
 
-
-    async function getImageFromFirestore(){
-        // var name = imgname.value;
-
-        var ref = doc(db, "ImageLinks/luca-zanon-26595-unsplash");
-        const docSnap = await getDoc(ref);
-
-        if(docSnap.exists()){
-            productImg.src = docSnap.data().ImageURL;
-        }
+    function addAllProducts() {
+        let i = 0;
+        arrayOfProducts.forEach(prod => {
+            addProduct(prod, i++)
+        });
+        assingAllEvent()
     }
 
-    window.onload = onloadWindow;
+    function addProduct(product, index) {
+        let html =
+
+        `
+        <div class="card shadow-sm bg-light mb-2">
+            <img src="`+ product.linksOfImagesArray +`" class="img-fluid shop-item-image thumb" id="thumb-`+ index +` alt="">
+            <div class="card-body text-center">
+                <h6 class="shop-item-title title detbtn" id="title-`+ index +`">`+ getShortTitle(product.ProductTitle) +`</h6>
+                <p class="card-text" id="card-text">`+ getUl(product.Points) +`</p>
+            </div>
+            <div>
+                <small class="text-muted float-start">`+ GenerateStockLabel(product.Stock) +`</small>
+            </div>
+            <div class="card-footer shop-item-details">
+                <p class="float-start top shop-item-price" id="shop-item-price">`+ product.Price +` €</p>
+                <button class="btn btn-outline-dark float-end shop-item-button ">Do košíka</button>
+            </div>
+        </div>
+        `
+
+        let newProd = document.createElement('div');
+        newProd.classList.add('col-12', 'col-sm-6', 'col-xl-2', 'col-md-4', 'col-lg-3');
+        newProd.innerHTML = html;
+        outerDiv.append(newProd);
+    }
+
+    function GenerateStockLabel(stock) {
+        let stocklabel = document.createElement('h6');
+        stocklabel.classList.add('stock');
+
+        if(stock > 0) {
+            stocklabel.innerHTML = 'na sklade';
+        }
+        else {
+            stocklabel.innerHTML = 'nie je na sklade';
+            stocklabel.classList.add('text-warning');
+        }
+        return stocklabel.outerHTML;
+    }
+
+    function getUl(array) {
+        let ul = document.createElement('ul');
+        ul.classList.add('points');
+
+        array.forEach(element => {
+            let li = document.createElement('li')
+            li.innerText = element;
+            ul.append(li);
+        });
+        return ul.outerHTML;
+    }
+
+    function getShortTitle(title){
+        if(title.lenght > 49) title = title.substring(0,47);
+        else return title;
+        return title + "..."
+    }
+
+    function getProductIndex(id) {
+        var indstart = id.indexOf('-') + 1;
+        var indend= id.lenght;
+        return Number(id.substring(indstart,indend));
+    }
+
+    function goToProductDetails(event) {
+        var index = getProductIndex(event.target.id);
+        localStorage.product = JSON.stringify(arrayOfProducts[index]);
+        window.location = "product_page_test - Copy.html"; // redirects to details page
+    }
+
+    function assingAllEvent() {
+        var btns = document.getElementsByClassName('detbtn');
+        var titles = document.getElementsByClassName('title');
+        var thumbs = document.getElementsByClassName('thumb');
+
+        for(let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click',goToProductDetails);
+            titles[i].addEventListener('click',goToProductDetails);
+            thumbs[i].addEventListener('click',goToProductDetails);
+        }
+    }
 
 
 </script>

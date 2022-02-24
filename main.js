@@ -103,12 +103,11 @@ function updateCartTotal() {
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText =  total + "€"
 }
-console.log("start");
-var itemNumber = 10;
-var cartBadge = document.getElementsByClassName('badge rounded-pill bg-danger');
-console.log(cartBadge[0]);
-console.log(cartBadge[0].innerHTML);
-cartBadge[0].innerHTML = itemNumber;
 
-console.log("end");
+
+// var cartBadge = document.getElementsByClassName('badge rounded-pill bg-danger');
+
+// cartBadge[0].innerHTML = quanity;
+
+
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produkty</title>
+    <title>Home</title>
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,9 +20,9 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="nav" id="navbarScroll">
-                <li class="nav me-auto my-2 my-lg-0">
-                    <a class="navbar-brand">Moje Potraviny</a>
+            <div id="navbarScroll">
+                <ul class="nav me-auto my-2 my-lg-0">
+                    <a class="navbar-brand">Vaše Oblečenie</a>
                     <li class="nav-item">
                         <a class="nav-link active" href="eshop-products-HOME.html">Domov</a>
                     </li>
@@ -33,43 +33,73 @@
                         <a class="nav-link " href="#">kontakt</a>
                     </li>
 
-                    <li class="nav-item">
-                    <!-- sign in -->
-                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSignIn" aria-controls="offcanvasSignIn">Prihlásiť sa</button>
+                    <li class="nav-item justify-content-end">
+                        <!-- sign in -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSignIn" aria-controls="offcanvasSignIn">Prihlásiť sa</button>
 
-                    <div class="offcanvas offcanvas-top" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasSignIn" aria-labelledby="offcanvasSignInLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvaSignInLabel">Prihlásenie/Registrácia</h5>
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-
-                        <div class="offcanvas-body">
-                            <div class="text-center" id="main-div">
-                                <main class="form-signin">
-                                    <form>
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                            <label for="floatingInput">Email address</label>
-                                        </div>
-                                        <div class="form-floating">
-                                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                            <label for="floatingPassword">Password</label>
-                                        </div>
-                                        <br>
-                                        <button class="btn btn-lg btn-primary btn-lg" type="submit">Prihlasiť sa</button>
-                                        <button class="btn btn-lg btn-primary btn-lg" type="submit">Registrovať sa</button>
-                                    </form>
-                                </main>
+                        <div class="offcanvas offcanvas-top" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasSignIn" aria-labelledby="offcanvasSignInLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvaSignInLabel">Prihlásenie/Registrácia</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
+
+                            <div class="offcanvas-body">
+                                <div class="text-center" id="main-div">
+                                    <main class="form-signin">
+                                        <form>
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                <label for="floatingInput">Email address</label>
+                                            </div>
+                                            <div class="form-floating">
+                                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                                <label for="floatingPassword">Password</label>
+                                            </div>
+                                            <br>
+                                            <button class="btn btn-lg btn-primary btn-lg" type="submit">Prihlasiť sa</button>
+                                            <button class="btn btn-lg btn-primary btn-lg" type="submit">Registrovať sa</button>
+                                        </form>
+                                    </main>
+                                </div>
+                            </div>
+                        <!--end of sign in -->
                         </div>
-                    <!--end of sign in -->
-                    </div>
                     </li>
                 </ul>
             </div>
           </div>
         </div>
     </nav>
+
+    <!-- start of carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="C:\xampp\htdocs\KOP\images\stock-photo-young-curly-mature-man-wearing-an-elegant-shirt-being-shocked-because-of-something-she-has-seen-1639970746.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="C:\xampp\htdocs\KOP\images\stock-photo-beautiful-blonde-woman-wear-of-white-set-of-track-suit-isolated-on-pastel-background-1926854804.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="C:\xampp\htdocs\KOP\images\stock-photo-full-length-body-size-girl-wearing-white-hoodie-jumping-up-with-backpack-isolated-pastel-pink-color-2015271203.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- end of carousel -->
+
     <section class="shop">
         <div>
              <div class="row py-5">
@@ -78,69 +108,6 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-sm-6 col-xl-2 col-md-4 col-lg-3">
-                    <div class="card shadow-sm bg-light mb-2">
-                        <img src="" class="img-fluid shop-item-image" id="productImg" alt="">
-                        <div class="card-body text-center">
-                            <h6 class="shop-item-title" id="shop-item-title"></h6>
-                            <p class="card-text" id="card-text"></p>
-                            <div>
-                                <small class="text-muted float-start">Skladom 5+ ks</small>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <small class="text-muted float-end" id="rating"></small>
-                            </div>
-                        </div>
-                        <div class="card-footer shop-item-details">
-                            <p class="float-start top shop-item-price" id="shop-item-price"></p>
-                            <button class="btn btn-outline-dark float-end shop-item-button">Do košíka</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-xl-2 col-md-4 col-lg-3">
-                    <div class="card shadow-sm bg-light mb-2">
-                        <img src="" class="img-fluid shop-item-image" id="productImg" alt="">
-                        <div class="card-body text-center">
-                            <h6 class="shop-item-title" id="shop-item-title"></h6>
-                            <p class="card-text" id="card-text"></p>
-                            <div>
-                                <small class="text-muted float-start">Skladom 5+ ks</small>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <small class="text-muted float-end" id="rating"></small>
-                            </div>
-                        </div>
-                        <div class="card-footer shop-item-details">
-                            <p class="float-start top shop-item-price" id="shop-item-price"></p>
-                            <button class="btn btn-outline-dark float-end shop-item-button">Do košíka</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-xl-2 col-md-4 col-lg-3">
-                    <div class="card shadow-sm bg-light mb-2">
-                        <img src="" class="img-fluid shop-item-image" id="productImg" alt="">
-                        <div class="card-body text-center">
-                            <h6 class="shop-item-title" id="shop-item-title"></h6>
-                            <p class="card-text" id="card-text"></p>
-                            <div>
-                                <small class="text-muted float-start">Skladom 5+ ks</small>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <i class="bi bi-star-fill float-end"></i>
-                                <small class="text-muted float-end" id="rating"></small>
-                            </div>
-                        </div>
-                        <div class="card-footer shop-item-details">
-                            <p class="float-start top shop-item-price" id="shop-item-price"></p>
-                            <button class="btn btn-outline-dark float-end shop-item-button">Do košíka</button>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-12 col-sm-6 col-xl-2 col-md-4 col-lg-3">
                     <div class="card shadow-sm bg-light mb-2">
                         <img src="" class="img-fluid shop-item-image" id="productImg" alt="">

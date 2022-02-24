@@ -17,15 +17,7 @@
 .nav-link:hover{
 	color: black;
 }
-.search {
-	height: 40px;
-	width: 80%;
-	border-radius: 60px;
-	outline: none;
-	margin-right: -35px;
-	font-family: 'Rubik', sans-serif;
-	/* border: 2px solid rgb(248, 26, 92);  /*search color  */
-}
+
 .customButton{
 	height: 40px;
 	width: 40%;
@@ -114,4 +106,17 @@ footer li{
 .offcanvas-footer{
     padding: 1rem 1rem;
     border-top: 1px solid #dee2e6;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    border: 1px lightgray solid;
+    font-size: 12px;
+    color: whitesmoke;
+    margin-top: 10px;
+}
+
+.breadcrumb-item, .breadcrumb-item a {
+    color: darkslategray !important;
+    font-weight: bold;
 }
