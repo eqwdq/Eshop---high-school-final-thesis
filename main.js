@@ -1,10 +1,12 @@
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
+    console.log('loading');
 } else {
     ready()
 }
-
+setTimeout(ready, 5000)
 function ready () {
+    console.log('ready');
     var removeCartItemButtons = document.getElementsByClassName('btn-outline-danger')
     for(var i = 0; i < removeCartItemButtons.length; i++) {
         var button = removeCartItemButtons[i]
@@ -16,7 +18,9 @@ function ready () {
         input.addEventListener('change', quantityChanged)
     }
     var addToCartButtons = document.getElementsByClassName('shop-item-button')
+    console.log(addToCartButtons.length);
     for(var i = 0; i < addToCartButtons.length; i++) {
+
         var button = addToCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
@@ -55,6 +59,7 @@ function addToCartClicked(event) {
     console.log(title, price, imageSrc)
     addItemToCart(title, price, imageSrc)
     updateCartTotal()
+    console.log("addtocartclicked")
 }
 
 function addItemToCart(title, price, imageSrc) {
@@ -84,8 +89,8 @@ function addItemToCart(title, price, imageSrc) {
     `
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
-    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
-    cartRow.getElementsByClassName('cart-quantity-intput')[0].addEventListener('change', quantityChanged)
+    cartRow.getElementsByClassName('btn-outline-danger')[0].addEventListener('click', removeCartItem)
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
 }
 
 function updateCartTotal() {
