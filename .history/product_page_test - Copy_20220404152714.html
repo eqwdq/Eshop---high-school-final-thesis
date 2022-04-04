@@ -71,9 +71,9 @@
 
     <script>
 		let product = null;
-		window.onload = function() {
+        setTimeout("localStorageProduct", 3000)
+		window.onload = function localStorageProduct() {
 			product = localStorage.product;
-            console.log(product);
 			if(product) {
 				product = JSON.parse(product);
 				LoadProduct();
@@ -119,9 +119,7 @@
 			document.getElementById('bigimg').src = elem.src;
 		}
 
-
 	</script>
-
 
 </body>
 </html>

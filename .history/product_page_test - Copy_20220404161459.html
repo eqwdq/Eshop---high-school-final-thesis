@@ -23,7 +23,7 @@
             <ul class="nav me-auto my-2 my-lg-0">
                 <a class="navbar-brand">Vaše Oblečenie</a>
                 <li class="nav-item">
-                    <a class="nav-link active" href="eshop-products-HOME.html">Domov</a>
+                    <a class="nav-link active" href="eshop-products-HOME - Copy.html">Domov</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="eshop-products.html">Produkty</a>
@@ -70,10 +70,59 @@
 
 
     <script>
+
+        let userlink = document.getElementById('userlink');
+        let signoutlink = document.getElementById('signoutlink');
+        let currentUser = null;
+
+        function getUsername(){
+            let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+
+            if(keepLoggedIn == "yes"){
+                currentUser = JSON.parse(localStorage.getItem('user'))
+            }
+            else {
+                currentUser = JSON.parse(sessionStorage.getItem('user'));
+            }
+        }
+        signoutlink.addEventListener('click', signOut)
+        function signOut() {
+            sessionStorage.removeItem('user');
+            localStorage.removeItem('user');
+            localStorage.removeItem('keepLoggedIn');
+            window.location = "product_page_test - Copy.html";
+        }
+
+        window.onload = function() {
+            getUsername();
+            if(currentUser == null){
+                userlink.innerText = "Nový účet";
+                userlink.classList.replace("nav-link", "btn");
+                userlink.classList.add("btn-outline-primary");
+                userlink.href = "register_test_new.html"
+
+                signoutlink.innerText = "Prihlásiť sa";
+                signoutlink.classList.replace("nav-link", "btn");
+                signoutlink.classList.add("btn-outline-success");
+                signoutlink.href = "login_test_new.html"
+            }
+
+            else {
+                userlink.style.display = "none";
+
+                signoutlink.innerText = "Odhlásiť sa";
+                signoutlink.classList.replace("nav-link", "btn");
+                signoutlink.classList.add("btn-outline-success");
+                signoutlink.classList.add("btn");
+                signoutlink.href = "javascript:Signout()";
+            }
+        }
+
+
+
 		let product = null;
 		window.onload = function() {
 			product = localStorage.product;
-            console.log(product);
 			if(product) {
 				product = JSON.parse(product);
 				LoadProduct();
@@ -122,6 +171,6 @@
 
 	</script>
 
-
+    <!-- <script src="login_javascript_test.js"></script> -->
 </body>
 </html>

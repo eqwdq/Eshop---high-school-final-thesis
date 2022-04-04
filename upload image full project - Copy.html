@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Stránka</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik:ital,wght@1,300&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="upload image full project.css">
+    <link rel="stylesheet" type="text/css" href="test1.css">
+
+    <link rel="icon" type="image/x-icon" href="https://octodex.github.com/images/swagtocat.png">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav me-auto my-2 my-lg-0">
+                <a class="navbar-brand">Vaše Oblečenie</a>
+                <li class="nav-item">
+                    <a class="nav-link active" href="eshop-products-HOME - Copy.html">Domov</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#target">kontakt</a>
+                </li>
+
+                <li class="nav-item mx-1">
+                    <a id="userlink" class="nav-link" href="#">Username</a>
+                </li>
+
+                <li class="nav-item mx-1">
+                    <a id="signoutlink" class="nav-link" href="#">Sign out</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Product Name</span>
+        <input type="text" class="form-control" id="nameinp">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Product Price</span>
+        <input type="number" class="form-control" id="priceinp">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Stock quantity</span>
+        <input type="number" class="form-control" id="stockinp">
+    </div>
+
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">Kategoria</label>
+        <select class="form-select" id="catinp">
+            <option selected value="Pre muzov">Pre muzov</option>
+            <option value="Pre zeny">Pre zeny</option>
+            <option value="pre deti">Pre deti</option>
+            <option value="Unisex">Unisex</option>
+        </select>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Points #1</span>
+        <input type="text" class="form-control .pointers" id="p1inp">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Points #2</span>
+        <input type="text" class="form-control .pointers" id="p2inp">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Points #3</span>
+        <input type="text" class="form-control .pointers" id="p3inp">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Points #4</span>
+        <input type="text" class="form-control .pointers" id="p4inp">
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-text" id="pdlab">Product Description</span>
+        <textarea class="form-control" id="desarea"></textarea>
+    </div>
+
+    <div id="imagesDiv"></div>
+
+    <div id="controldiv">
+        <label ></label><label id="loadlab"></label>
+        <button id="addprodbtn" class="btn btn-primary">Poslat do Databázy</button>
+        <button id="selimgsbtn" class="btn btn-secondary">Vybrať obrázky</button>
+    </div>
+
+    <script type="module">
+
+        var files = [];
+        var FileReaders = [];
+        var ImageLinksArray = [];
+
+    const imgDiv = document.getElementById('imagesDiv');
+    const selBtn = document.getElementById('selimgsbtn');
+    const addBtn = document.getElementById('addprodbtn');
+    const proglab = document.getElementById('loadlab');
+
+    const name = document.getElementById('nameinp');
+    const category = document.getElementById('catinp');
+    const description = document.getElementById('desarea');
+    const price = document.getElementById('priceinp');
+    const stock = document.getElementById('stockinp');
+
+    const p1 = document.getElementById('p1inp');
+    const p2 = document.getElementById('p2inp');
+    const p3 = document.getElementById('p3inp');
+    const p4 = document.getElementById('p4inp');
+
+    function OpenFileDialog() {
+            let inp = document.createElement('input');
+            inp.type = 'file';
+            inp.multiple = 'multiple';
+
+            inp.onchange = (e) => {
+                AssingImgsToFilesArray(e.target.files);
+                CreateImgTags();
+            }
+
+            inp.click();
+        }
+
+        function AssingImgsToFilesArray(thefiles) {
+            let num = files.length + thefiles.length;
+            let looplim = (num <= 10) ? thefiles.length : (10-files.length)
+
+            for (let i = 0; i <  looplim; i++) {
+                files.push(thefiles[i]);
+            }
+
+            if(num > 10) alert("maximum 10 images are allowed!");
+        }
+
+        function CreateImgTags() {
+            imgDiv.innerHTML = '';
+            imgDiv.classList.add('imageDivStyle')
+
+            for (let i = 0; i < files.length; i++) {
+                FileReaders[i] = new FileReader();
+
+                FileReaders[i].onload = function() {
+                    var img = document.createElement('img');
+                    img.id = 'imgNo' + i;
+                    img.classList.add('img');
+                    img.src = FileReaders[i].result;
+                    imgDiv.append(img);
+                }
+
+                if(files[i]) {
+                    FileReaders[i].readAsDataURL(files[i]);
+                }
+
+            }
+            let lab = document.createElement('label');
+            lab.innerHTML = 'clear images';
+            lab.style = 'cursor: pointer; display: block; color: navy; font-size: 12px';
+            lab.addEventListener('click', ClearImages);
+            imgDiv.append(lab);
+        }
+
+        function ClearImages() {
+            files = [];
+            ImageLinksArray = [];
+            imgDiv.innerHTML ='';
+            imgDiv.classList.remove('imagesDivStyle')
+        }
+
+        selBtn.addEventListener('click', OpenFileDialog);
+        addBtn.addEventListener('click', uploadAllImages);
+
+        function UploadProgress() {
+            return 'uploaded' + ImageLinksArray.length + ' of ' + files.length
+        }
+
+        function allImagesUploaded() { // returns number
+            return ImageLinksArray.length == files.length;
+        }
+
+        function getTitle() {
+            let namey = name.value.substring(0,50);
+            return namey.replace(/[^a-zA-Z0-9]/g,"");
+        }
+
+        function uploadAllImages() {
+            selBtn.disabled = true;
+            addBtn.disabled = true;
+            ImageLinksArray = [];
+
+            for(let i = 0; i < files.length; i++) {
+                uploadImage(files[i], i);
+            }
+        }
+
+        function getPoints() {
+            let points = [];
+            if(p1.value.length>0) points.push(p1.value);
+            if(p2.value.length>0) points.push(p2.value);
+            if(p3.value.length>0) points.push(p3.value);
+            if(p4.value.length>0) points.push(p4.value);
+
+            return points
+        }
+
+        function restoreBack() {
+            selBtn.disabled = false;
+            addBtn.disabled = false;
+        }
+
+
+
+
+        function uploadImage(imgToUpload, imgNo) {
+            const metadata = {
+                contentType: imgToUpload.type,
+            };
+
+            const storage = getStorage();
+
+            const imageAddress = "ImagesRealtime/" + getTitle() + "/img#" + (imgNo+1);
+            const storageRef = sRef(storage, imageAddress);
+            const UploadTask = uploadBytesResumable(storageRef, imgToUpload,metadata);
+            UploadTask.on('state_changed',(snapshot) => {
+                proglab.innerHTML = UploadProgress();
+            },
+
+            (error) => {
+                alert("upload failed");
+            },
+
+            () => {
+                getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
+                    ImageLinksArray.push(downloadURL);
+                    if(allImagesUploaded()) {
+                        proglab.innerHTML = "all images uploaded";
+                        uploadProduct();
+                    }
+                });
+            }
+            );
+        }
+
+
+    ///////////////////////////////////login
+    let userlink = document.getElementById('userlink');
+    let signoutlink = document.getElementById('signoutlink');
+    let currentUser = null;
+
+    function getUsername(){
+        let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+
+        if(keepLoggedIn == "yes"){
+            currentUser = JSON.parse(localStorage.getItem('user'))
+        }
+        else {
+            currentUser = JSON.parse(sessionStorage.getItem('user'));
+        }
+    }
+    signoutlink.addEventListener('click', signOut)
+    function signOut() {
+        sessionStorage.removeItem('user');
+        localStorage.removeItem('user');
+        localStorage.removeItem('keepLoggedIn');
+        window.location = "eshop-products-HOME - Copy.html";
+    }
+
+    window.onload = function() {
+        getUsername();
+        if(currentUser == null){
+            userlink.innerText = "Nový účet";
+            userlink.classList.replace("nav-link", "btn");
+            userlink.classList.add("btn-outline-primary");
+            userlink.href = "register_test_new.html"
+
+            signoutlink.innerText = "Prihlásiť sa";
+            signoutlink.classList.replace("nav-link", "btn");
+            signoutlink.classList.add("btn-outline-success");
+            signoutlink.href = "login_test_new.html"
+        }
+
+        else {
+            userlink.style.display = "none";
+
+            signoutlink.innerText = "Odhlásiť sa";
+            signoutlink.classList.replace("nav-link", "btn");
+            signoutlink.classList.add("btn-outline-success");
+            signoutlink.classList.add("btn");
+            signoutlink.href = "javascript:Signout()";
+        }
+    }
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-analytics.js";
+        import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-storage.js";
+        import { getDatabase, ref, get, set, child, update, remove } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js";
+        import { getFirestore, doc, getDoc, setDoc, collection, addDoc, updateDoc  } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js";
+
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyCI5SdwdXMQeu3y7AQPZnkcZH_GmIcSgKw",
+            authDomain: "login-9a8b6.firebaseapp.com",
+            databaseURL: "https://login-9a8b6-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "login-9a8b6",
+            storageBucket: "login-9a8b6.appspot.com",
+            messagingSenderId: "663312681266",
+            appId: "1:663312681266:web:aaff10c5e0a58994ceaf2b",
+            measurementId: "G-XTC30ZEDBX"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const realdb = getDatabase();
+        const db = getFirestore();
+
+        function uploadProduct() {
+            set(ref(realdb, "ProductRealdb/" + getTitle()),{
+                ProductTitle: name.value,
+                Category: category.value,
+                Description: description.value,
+                Price: price.value,
+                Stock: stock.value,
+                Points: getPoints(),
+                linksOfImagesArray: ImageLinksArray
+            });
+
+            alert("upload succesful");
+            restoreBack();
+        }
+    </script>
+
+</body>
+</html>

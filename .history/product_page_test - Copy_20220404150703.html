@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <body>
-
     <nav class="navbar">
         <div class="container">
             <ul class="nav me-auto my-2 my-lg-0">
@@ -32,15 +31,38 @@
                     <a class="nav-link " href="#">kontakt</a>
                 </li>
 
-                <li class="nav-item mx-1">
-                    <a id="userlink" class="nav-link" href="#">Username</a>
+                <li class="nav-item justify-content-end">
+                    <!-- sign in -->
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSignIn" aria-controls="offcanvasSignIn">Prihlásiť sa</button>
+
+                    <div class="offcanvas offcanvas-top" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasSignIn" aria-labelledby="offcanvasSignInLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvaSignInLabel">Prihlásenie/Registrácia</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+
+                        <div class="offcanvas-body">
+                            <div class="text-center" id="main-div">
+                                <main class="form-signin">
+                                    <form>
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                            <label for="floatingInput">Email address</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                            <label for="floatingPassword">Password</label>
+                                        </div>
+                                        <br>
+                                        <button class="btn btn-lg btn-primary btn-lg" type="submit">Prihlasiť sa</button>
+                                        <button class="btn btn-lg btn-primary btn-lg" type="submit">Registrovať sa</button>
+                                    </form>
+                                </main>
+                            </div>
+                        </div>
+                    <!--end of sign in -->
+                    </div>
                 </li>
-
-                <li class="nav-item mx-1">
-                    <a id="signoutlink" class="nav-link" href="#">Sign out</a>
-                </li>
-
-
             </ul>
         </div>
     </nav>
@@ -71,9 +93,9 @@
 
     <script>
 		let product = null;
+        localStorage.getItem(product)
 		window.onload = function() {
 			product = localStorage.product;
-            console.log(product);
 			if(product) {
 				product = JSON.parse(product);
 				LoadProduct();
@@ -81,7 +103,9 @@
 		}
         console.log(product);
 		function LoadProduct() {
+			// document.getElementById('titleLi').innerHTML = product.ProductTitle;
 			document.getElementById('titletop').innerHTML = product.ProductTitle;
+			// document.getElementById('catlink').innerHTML = product.Category;
 			document.getElementById('bigimg').src = product.linksOfImagesArray[0];
 			document.getElementById('title').innerHTML = product.ProductTitle;
 			document.getElementById('description').innerHTML = product.Description;
@@ -118,10 +142,6 @@
 			let elem = document.getElementById(event.target.id);
 			document.getElementById('bigimg').src = elem.src;
 		}
-
-
 	</script>
-
-
 </body>
 </html>

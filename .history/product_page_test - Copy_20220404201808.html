@@ -71,9 +71,9 @@
 
     <script>
 		let product = null;
-		window.onload = function() {
+        setTimeout("getProduct", 5000)
+		window.onload = function getProduct() {
 			product = localStorage.product;
-            console.log(product);
 			if(product) {
 				product = JSON.parse(product);
 				LoadProduct();

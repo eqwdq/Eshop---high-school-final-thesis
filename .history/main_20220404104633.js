@@ -4,7 +4,7 @@ if (document.readyState == 'loading') {
 } else {
     ready()
 }
-setTimeout(ready, 3000)
+setTimeout(ready, 5000)
 function ready () {
     console.log('ready');
     var removeCartItemButtons = document.getElementsByClassName('btn-outline-danger')
